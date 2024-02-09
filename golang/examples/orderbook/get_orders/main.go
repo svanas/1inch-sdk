@@ -7,9 +7,9 @@ import (
 	"log"
 	"os"
 
-	"github.com/1inch/1inch-sdk/golang/client"
-	"github.com/1inch/1inch-sdk/golang/client/orderbook"
-	"github.com/1inch/1inch-sdk/golang/helpers/consts/chains"
+	"github.com/svanas/1inch-sdk/golang/client"
+	"github.com/svanas/1inch-sdk/golang/client/orderbook"
+	"github.com/svanas/1inch-sdk/golang/helpers/consts/chains"
 )
 
 func main() {

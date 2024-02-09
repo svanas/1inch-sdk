@@ -5,8 +5,8 @@ import (
 	"math/big"
 	"regexp"
 
-	"github.com/1inch/1inch-sdk/golang/helpers"
-	"github.com/1inch/1inch-sdk/golang/helpers/consts/chains"
+	"github.com/svanas/1inch-sdk/golang/helpers"
+	"github.com/svanas/1inch-sdk/golang/helpers/consts/chains"
 )
 
 func CheckEthereumAddressRequired(parameter interface{}, variableName string) error {

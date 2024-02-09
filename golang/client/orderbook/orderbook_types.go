@@ -1,8 +1,8 @@
 package orderbook
 
 import (
-	"github.com/1inch/1inch-sdk/golang/client/validate"
-	"github.com/1inch/1inch-sdk/golang/helpers/consts/tokens"
+	"github.com/svanas/1inch-sdk/golang/client/validate"
+	"github.com/svanas/1inch-sdk/golang/helpers/consts/tokens"
 )
 
 type CreateOrderParams struct {
