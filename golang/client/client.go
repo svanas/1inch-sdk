@@ -136,7 +136,6 @@ func (c *Client) NewRequest(method, urlStr string, body []byte) (*http.Request, 
 	}
 
 	req.Header.Set("User-Agent", "GolangSDK/0.0.3-developer-preview")
-
 	if body != nil {
 		req.Header.Set("Content-Type", "application/json")
 	}
@@ -145,7 +144,6 @@ func (c *Client) NewRequest(method, urlStr string, body []byte) (*http.Request, 
 }
 
 func (c *Client) Do(ctx context.Context, req *http.Request, v interface{}) (*http.Response, error) {
-	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("Authorization", fmt.Sprintf("Bearer %s", c.ApiKey))
 
 	req.WithContext(ctx)
@@ -174,13 +172,13 @@ func (c *Client) Do(ctx context.Context, req *http.Request, v interface{}) (*htt
 		err = json.Unmarshal(data, &messageMap)
 		if err != nil {
 			// Fallback to raw string if unmarshalling fails
-			return nil, fmt.Errorf("failed to unmarshal response body: %s", string(data))
+			return nil, fmt.Errorf("failed to unmarshal response body - response code: %d - raw response body: %s", resp.StatusCode, string(data))
 		}
 
 		// Marshal the message with indentation
 		formattedMessage, err := json.MarshalIndent(messageMap, "", "    ")
 		if err != nil {
-			return nil, fmt.Errorf("failed to marshal formatted message: %v - Original error: %s", err, string(data))
+			return nil, fmt.Errorf("failed to marshal formatted message: %v - original error: %s", err, string(data))
 		}
 
 		return nil, fmt.Errorf("%s", formattedMessage)
