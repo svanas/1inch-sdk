@@ -6,6 +6,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/require"
+
 	"github.com/svanas/1inch-sdk/golang/helpers/consts/amounts"
 	"github.com/svanas/1inch-sdk/golang/helpers/consts/chains"
 )
