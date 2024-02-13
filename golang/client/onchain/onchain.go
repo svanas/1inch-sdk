@@ -14,6 +14,7 @@ import (
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/ethclient"
+
 	"github.com/svanas/1inch-sdk/golang/helpers"
 	"github.com/svanas/1inch-sdk/golang/helpers/consts/abis"
 	"github.com/svanas/1inch-sdk/golang/helpers/consts/amounts"
