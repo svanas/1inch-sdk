@@ -1,11 +1,13 @@
 package orderbook
 
 import (
+	"github.com/svanas/1inch-sdk/golang/client/onchain"
 	"github.com/svanas/1inch-sdk/golang/client/validate"
 	"github.com/svanas/1inch-sdk/golang/helpers/consts/tokens"
 )
 
 type CreateOrderParams struct {
+	ApprovalType onchain.ApprovalType
 	ChainId      int
 	PrivateKey   string
 	ExpireAfter  int64
