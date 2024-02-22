@@ -1,10 +1,12 @@
 package main
 
 import (
+	"context"
 	"log"
 	"os"
 
 	"github.com/svanas/1inch-sdk/golang/client"
+	"github.com/svanas/1inch-sdk/golang/client/onchain"
 	"github.com/svanas/1inch-sdk/golang/client/swap"
 	"github.com/svanas/1inch-sdk/golang/helpers/consts/chains"
 	"github.com/svanas/1inch-sdk/golang/helpers/consts/tokens"
@@ -31,7 +33,7 @@ func main() {
 
 	// Build the config for the swap request
 	swapParams := swap.SwapTokensParams{
-		ApprovalType:  swap.PermitIfPossible,
+		ApprovalType:  onchain.PermitIfPossible,
 		SkipWarnings:  false,
 		PublicAddress: os.Getenv("WALLET_ADDRESS"),
 		WalletKey:     os.Getenv("WALLET_KEY"),
@@ -46,7 +48,7 @@ func main() {
 		},
 	}
 
-	err = c.Actions.SwapTokens(swapParams)
+	err = c.Actions.SwapTokens(context.Background(), swapParams)
 	if err != nil {
 		log.Fatalf("Failed to swap tokens: %v", err)
 	}
